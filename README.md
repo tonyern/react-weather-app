@@ -1,4 +1,12 @@
+## About
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This is a simple weather app that allows users to enter a city name and receive the current temperature and weather.
+
+This app makes use of the Open Weather Map API: (https://api.openweathermap.org/).
+
+![Screenshot of Weather App](public/weather-app-ui.png)
 
 ## Available Scripts
 
