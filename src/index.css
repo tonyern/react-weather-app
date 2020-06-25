@@ -24,11 +24,15 @@ main {
 }
 
 .App.Rain {
-    background-image: url('./assets/rain.jpg');
+    background-image: url('./assets/rain.png');
 }
 
 .App.Thunderstorm {
-    background-image: url('./assets/thunderstorm.jpeg');
+    background-image: url('./assets/thunderstorm.png');
+}
+
+.App.Haze {
+    background-image: url('./assets/haze.jpeg');
 }
 
 .search-box {

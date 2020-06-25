@@ -4,7 +4,7 @@ const openWeatherMapAPI = {
   base: "http://api.openweathermap.org/data/2.5/"
 }
 
-function App() {
+const App = () => {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
@@ -52,7 +52,7 @@ function App() {
           <input 
             type="text"
             className="search-bar"
-            placeholder="Search Weather App" 
+            placeholder="Search City" 
             onChange={event => setQuery(event.target.value)}
             value={query}
             onKeyPress={search} />
@@ -67,6 +67,7 @@ function App() {
 
           <div className="weather-box">
             <div className="temperature">{Math.round(weather.main.temp)}°C</div>
+            <div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}°F</div>
             <div className="weather">{weather.weather[0].main}</div>
           </div>
         </div>
