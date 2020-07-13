@@ -27,6 +27,10 @@ main {
     background-image: url('./assets/rain.png');
 }
 
+.App.Mist {
+    background-image: url('./assets/mist.jpeg');
+}
+
 .App.Thunderstorm {
     background-image: url('./assets/thunderstorm.png');
 }
@@ -107,6 +111,13 @@ main {
 .weather-box .weather {
     color: #FFF;
     font-size: 48px;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box .weather-description {
+    color: #FFF;
+    font-size: 28px;
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-const openWeatherMapAPI = {
-  key: "8713314e929a6ae57041a78e979b402d",
-  base: "http://api.openweathermap.org/data/2.5/"
-}
 
 const App = () => {
+
+  const openWeatherMapAPI = {
+    key: "8713314e929a6ae57041a78e979b402d",
+    base: "http://api.openweathermap.org/data/2.5/"
+  }
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
@@ -69,6 +70,7 @@ const App = () => {
             <div className="temperature">{Math.round(weather.main.temp)}°C</div>
             <div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}°F</div>
             <div className="weather">{weather.weather[0].main}</div>
+            <div className="weather-description">{weather.weather[0].description}</div>
           </div>
         </div>
         ) : ('')}
