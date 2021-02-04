@@ -70,7 +70,6 @@ const App = () => {
             <div className="temperature">{Math.round(weather.main.temp)}°C</div>
             <div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}°F</div>
             <div className="weather">{weather.weather[0].main}</div>
-            <div className="weather-description">{weather.weather[0].description}</div>
           </div>
         </div>
         ) : ('')}
