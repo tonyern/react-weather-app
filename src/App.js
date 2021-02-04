@@ -77,9 +77,11 @@ const App = () => {
           </div>
 
           <div className="weather-box">
-            <div className="temperature">
-              {(degree === 'C') ? (<div className="temperature">{Math.round(weather.main.temp)}</div>) : (<div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}</div>)}
-              <button className="degree-button" onClick={toggleDegrees}>°{degree}</button>
+            <div>
+              {(degree === 'C') ? 
+                (<div className="temperature">{Math.round(weather.main.temp)}</div>) : 
+                (<div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}</div>)}
+              <button className="temperature degree-btn" onClick={toggleDegrees}>°{degree}</button>
             </div>
             <div className="weather">{weather.weather[0].main}</div>
           </div>
