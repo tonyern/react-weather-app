@@ -9,6 +9,7 @@ const App = () => {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+  const [degree, setDegree] = useState('C');
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -46,6 +47,15 @@ const App = () => {
     return background;
   }
 
+  // Change temperature display to celsius or fahranheit.
+  const toggleDegrees = () => {
+    if (degree === 'C') {
+      setDegree('F');
+    } else {
+      setDegree('C');
+    }
+  }
+
   return (
     <div className={changeBackground()}>
       <main>
@@ -67,8 +77,10 @@ const App = () => {
           </div>
 
           <div className="weather-box">
-            <div className="temperature">{Math.round(weather.main.temp)}°C</div>
-            <div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}°F</div>
+            <div className="temperature">
+              {(degree === 'C') ? (<div className="temperature">{Math.round(weather.main.temp)}</div>) : (<div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}</div>)}
+              <button className="degree-button" onClick={toggleDegrees}>°{degree}</button>
+            </div>
             <div className="weather">{weather.weather[0].main}</div>
           </div>
         </div>

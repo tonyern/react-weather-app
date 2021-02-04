@@ -123,16 +123,19 @@ main {
     box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+.weather-box .degree-button {
+    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+    background: none;
+    border: none;
+
+    color: #FFF;
+    font-size: 52px;
+    font-weight: 800;
+}
+
 .weather-box .weather {
     color: #FFF;
     font-size: 48px;
-    font-weight: 700;
-    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-}
-
-.weather-box .weather-description {
-    color: #FFF;
-    font-size: 28px;
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
