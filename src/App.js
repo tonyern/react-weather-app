@@ -84,6 +84,7 @@ const App = () => {
               <button className="temperature degree-btn" onClick={toggleDegrees}>°{degree}</button>
             </div>
             <div className="weather">{weather.weather[0].main}</div>
+            <div className="weather">Humidity: {weather.main.humidity}%</div>
           </div>
         </div>
         ) : ('')}
