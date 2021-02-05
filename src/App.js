@@ -24,7 +24,8 @@ const App = () => {
   }
 
   const dateBuilder = (d) => {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let months = ["January", "February", "March", "April", "May", "June", "July", 
+      "August", "September", "October", "November", "December"]
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let day = days[d.getDay()];
@@ -83,6 +84,16 @@ const App = () => {
                 (<div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}</div>)}
               <button className="temperature degree-btn" onClick={toggleDegrees}>°{degree}</button>
             </div>
+            <div>
+            {(degree === 'C') ? 
+                (<div>
+                  Feels Like: {Math.round(weather.main.feels_like)}°{degree}  Low: {Math.round(weather.main.temp_min)}°{degree} High: {Math.round(weather.main.temp_max)}°{degree}
+                </div>) : 
+                (<div>
+                  Feels Like: {Math.round((9 / 5) * weather.main.feels_like + 32)}°{degree} Low: {Math.round((9 / 5) * weather.main.temp_min + 32)}°{degree}  High: {Math.round((9 / 5) * weather.main.temp_max + 32)}°{degree}
+                </div>)}
+            </div>
+
             <div className="weather">{weather.weather[0].main}</div>
             <div className="weather">Humidity: {weather.main.humidity}%</div>
           </div>
