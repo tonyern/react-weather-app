@@ -54,6 +54,13 @@ main {
     transition: 0.4 ease-out;
 }
 
+.App.Snow {
+    background-image: url('./assets/snow.jpeg');
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease-out;
+}
+
 .search-box {
     width: 100%;
     margin: 0px;
@@ -121,6 +128,15 @@ main {
     text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
     text-align: center;
     box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-box .detail-temperature {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 800;
+
+    text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+    text-align: center;
 }
 
 .weather-box .degree-btn {
