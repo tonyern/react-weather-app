@@ -54,6 +54,13 @@ main {
     transition: 0.4 ease-out;
 }
 
+.App.Snow {
+    background-image: url('./assets/snow.jpeg');
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease-out;
+}
+
 .search-box {
     width: 100%;
     margin: 0px;
