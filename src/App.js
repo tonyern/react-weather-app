@@ -25,7 +25,7 @@ const App = () => {
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", 
-      "August", "September", "October", "November", "December"]
+      "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let day = days[d.getDay()];
@@ -37,7 +37,7 @@ const App = () => {
   }
 
   const changeBackground = () => {
-    let background = "App "
+    let background = "App ";
 
     if (typeof weather.main != "undefined") {
       background = background.concat(weather.weather[0].main);
@@ -55,6 +55,14 @@ const App = () => {
     } else {
       setDegree('C');
     }
+  }
+
+  const celsiusToFahrenheit = (celsius) => {
+    return Math.round((9 / 5) * celsius + 32);
+  }
+
+  const roundCelsius = (celsius) => {
+    return Math.round(celsius);
   }
 
   return (
@@ -80,17 +88,17 @@ const App = () => {
           <div className="weather-box">
             <div>
               {(degree === 'C') ? 
-                (<div className="temperature">{Math.round(weather.main.temp)}</div>) : 
-                (<div className="temperature">{Math.round((9 / 5) * weather.main.temp + 32)}</div>)}
+                (<div className="temperature">{roundCelsius(weather.main.temp)}</div>) : 
+                (<div className="temperature">{celsiusToFahrenheit(weather.main.temp)}</div>)}
               <button className="temperature degree-btn" onClick={toggleDegrees}>°{degree}</button>
             </div>
             <div>
             {(degree === 'C') ? 
                 (<div className="detail-temperature">
-                  Feels Like: {Math.round(weather.main.feels_like)}°{degree} | Low: {Math.round(weather.main.temp_min)}°{degree} | High: {Math.round(weather.main.temp_max)}°{degree}
+                  Feels Like: {roundCelsius(weather.main.feels_like)}°{degree} | Low: {roundCelsius(weather.main.temp_min)}°{degree} | High: {roundCelsius(weather.main.temp_max)}°{degree}
                 </div>) : 
                 (<div className="detail-temperature">
-                  Feels Like: {Math.round((9 / 5) * weather.main.feels_like + 32)}°{degree} | Low: {Math.round((9 / 5) * weather.main.temp_min + 32)}°{degree} | High: {Math.round((9 / 5) * weather.main.temp_max + 32)}°{degree}
+                  Feels Like: {celsiusToFahrenheit(weather.main.feels_like)}°{degree} | Low: {celsiusToFahrenheit(weather.main.temp_min)}°{degree} | High: {celsiusToFahrenheit(weather.main.temp_max)}°{degree}
                 </div>)}
             </div>
 
