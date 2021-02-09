@@ -75,21 +75,21 @@ const App = () => {
     let j = (windDirection + 11.25) % 360;
 
          if (j <=  22.5) return "N";
-    else if (j <=  45  ) return "NNE";
+    else if (j <=  45  ) return "North NE";
     else if (j <=  67.5) return "NE";
-    else if (j <=  90  ) return "ENE";
+    else if (j <=  90  ) return "East NE";
     else if (j <= 112.5) return "E";
-    else if (j <= 135  ) return "ESE";
+    else if (j <= 135  ) return "East SE";
     else if (j <= 157.5) return "SE";
-    else if (j <= 180  ) return "SSE";
+    else if (j <= 180  ) return "South SE";
     else if (j <= 202.5) return "S";
-    else if (j <= 225  ) return "SSW";
+    else if (j <= 225  ) return "South SW";
     else if (j <= 247.5) return "SW";
-    else if (j <= 270  ) return "WSW";
+    else if (j <= 270  ) return "West SW";
     else if (j <= 292.5) return "W";
-    else if (j <= 315  ) return "WNW";
+    else if (j <= 315  ) return "West NW";
     else if (j <= 337.5) return "NW";
-    else                 return "NNW";
+    else                 return "North NW";
   }
 
   return (
