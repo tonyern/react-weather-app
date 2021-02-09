@@ -57,12 +57,39 @@ const App = () => {
     }
   }
 
-  const celsiusToFahrenheit = (celsius) => {
+  // Converting celsius to fahrenheit and then rounding.
+  const roundFahrenheit = (celsius) => {
     return Math.round((9 / 5) * celsius + 32);
   }
 
+  // Rounding celsius.
   const roundCelsius = (celsius) => {
     return Math.round(celsius);
+  }
+
+  /*
+    Code from link below:
+    https://community.openhab.org/t/convert-wind-direction-degrees-to-compass-points/71677/3.
+  */
+  const getWindDirection = (windDirection) => {
+    let j = (windDirection + 11.25) % 360;
+
+         if (j <=  22.5) return "N";
+    else if (j <=  45  ) return "NNE";
+    else if (j <=  67.5) return "NE";
+    else if (j <=  90  ) return "ENE";
+    else if (j <= 112.5) return "E";
+    else if (j <= 135  ) return "ESE";
+    else if (j <= 157.5) return "SE";
+    else if (j <= 180  ) return "SSE";
+    else if (j <= 202.5) return "S";
+    else if (j <= 225  ) return "SSW";
+    else if (j <= 247.5) return "SW";
+    else if (j <= 270  ) return "WSW";
+    else if (j <= 292.5) return "W";
+    else if (j <= 315  ) return "WNW";
+    else if (j <= 337.5) return "NW";
+    else                 return "NNW";
   }
 
   return (
@@ -89,7 +116,7 @@ const App = () => {
             <div>
               {(degree === 'C') ? 
                 (<div className="temperature">{roundCelsius(weather.main.temp)}</div>) : 
-                (<div className="temperature">{celsiusToFahrenheit(weather.main.temp)}</div>)}
+                (<div className="temperature">{roundFahrenheit(weather.main.temp)}</div>)}
               <button className="temperature degree-btn" onClick={toggleDegrees}>°{degree}</button>
             </div>
             <div>
@@ -98,13 +125,13 @@ const App = () => {
                   Feels Like: {roundCelsius(weather.main.feels_like)}°{degree} | Low: {roundCelsius(weather.main.temp_min)}°{degree} | High: {roundCelsius(weather.main.temp_max)}°{degree}
                 </div>) : 
                 (<div className="detail-temperature">
-                  Feels Like: {celsiusToFahrenheit(weather.main.feels_like)}°{degree} | Low: {celsiusToFahrenheit(weather.main.temp_min)}°{degree} | High: {celsiusToFahrenheit(weather.main.temp_max)}°{degree}
+                  Feels Like: {roundFahrenheit(weather.main.feels_like)}°{degree} | Low: {roundFahrenheit(weather.main.temp_min)}°{degree} | High: {roundFahrenheit(weather.main.temp_max)}°{degree}
                 </div>)}
             </div>
 
             <div className="weather">{weather.weather[0].main}</div>
             <div className="weather">Humidity: {weather.main.humidity}%</div>
-            <div className="weather">Wind: {Math.round(weather.wind.speed * 2.236936)} MPH</div>
+            <div className="weather">Wind: {Math.round(weather.wind.speed * 2.236936)} MPH {getWindDirection(weather.wind.deg)}</div>
           </div>
         </div>
         ) : ('')}
