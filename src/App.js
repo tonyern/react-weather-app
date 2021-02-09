@@ -96,6 +96,7 @@ const App = () => {
 
             <div className="weather">{weather.weather[0].main}</div>
             <div className="weather">Humidity: {weather.main.humidity}%</div>
+            <div className="weather">Wind: {Math.round(weather.wind.speed * 2.236936)} MPH</div>
           </div>
         </div>
         ) : ('')}
