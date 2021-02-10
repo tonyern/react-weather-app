@@ -67,6 +67,10 @@ const App = () => {
     return Math.round(celsius);
   }
 
+  const convertWindMPH = (windSpeed) => {
+    return Math.round(windSpeed * 2.236936);
+  }
+
   /*
     Code from link below:
     https://community.openhab.org/t/convert-wind-direction-degrees-to-compass-points/71677/3.
@@ -131,7 +135,9 @@ const App = () => {
 
             <div className="weather">{weather.weather[0].main}</div>
             <div className="weather">Humidity: {weather.main.humidity}%</div>
-            <div className="weather">Wind: {Math.round(weather.wind.speed * 2.236936)} MPH {getWindDirection(weather.wind.deg)}</div>
+            <div className="weather">
+              Wind: {convertWindMPH(weather.wind.speed)} MPH {getWindDirection(weather.wind.deg)}
+            </div>
           </div>
         </div>
         ) : ('')}
