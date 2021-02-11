@@ -29,8 +29,6 @@ const App = () => {
 
     if (typeof weather.main != "undefined") {
       background = background.concat(weather.weather[0].main);
-    } else {
-      return background;
     }
 
     return background;
