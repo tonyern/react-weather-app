@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const WeatherInfo = (props) => {
+const WeatherInfo = ({ weatherData }) => {
   const [degree, setDegree] = useState("C");
 
   const dateBuilder = (d) => {
@@ -89,7 +89,7 @@ const WeatherInfo = (props) => {
     <div>
       <div className="location-box">
         <div className="location">
-          {props.weatherData.name}, {props.weatherData.sys.country}
+          {weatherData.name}, {weatherData.sys.country}
         </div>
         <div className="date">{dateBuilder(new Date())}</div>
       </div>
@@ -98,11 +98,11 @@ const WeatherInfo = (props) => {
         <div>
           {degree === "C" ? (
             <div className="temperature">
-              {roundCelsius(props.weatherData.main.temp)}
+              {roundCelsius(weatherData.main.temp)}
             </div>
           ) : (
             <div className="temperature">
-              {roundFahrenheit(props.weatherData.main.temp)}
+              {roundFahrenheit(weatherData.main.temp)}
             </div>
           )}
           <button className="temperature degree-btn" onClick={toggleDegrees}>
@@ -112,28 +112,25 @@ const WeatherInfo = (props) => {
         <div>
           {degree === "C" ? (
             <div className="detail-temperature">
-              Feels Like: {roundCelsius(props.weatherData.main.feels_like)}°
-              {degree} | Low: {roundCelsius(props.weatherData.main.temp_min)}°
-              {degree} | High: {roundCelsius(props.weatherData.main.temp_max)}°
-              {degree}
+              Feels Like: {roundCelsius(weatherData.main.feels_like)}°{degree} |
+              Low: {roundCelsius(weatherData.main.temp_min)}°{degree} | High:{" "}
+              {roundCelsius(weatherData.main.temp_max)}°{degree}
             </div>
           ) : (
             <div className="detail-temperature">
-              Feels Like: {roundFahrenheit(props.weatherData.main.feels_like)}°
-              {degree} | Low: {roundFahrenheit(props.weatherData.main.temp_min)}
-              °{degree} | High:{" "}
-              {roundFahrenheit(props.weatherData.main.temp_max)}°{degree}
+              Feels Like: {roundFahrenheit(weatherData.main.feels_like)}°
+              {degree} | Low: {roundFahrenheit(weatherData.main.temp_min)}°
+              {degree} | High: {roundFahrenheit(weatherData.main.temp_max)}°
+              {degree}
             </div>
           )}
         </div>
 
-        <div className="weather">{props.weatherData.weather[0].main}</div>
+        <div className="weather">{weatherData.weather[0].main}</div>
+        <div className="weather">Humidity: {weatherData.main.humidity}%</div>
         <div className="weather">
-          Humidity: {props.weatherData.main.humidity}%
-        </div>
-        <div className="weather">
-          Wind: {convertWindMPH(props.weatherData.wind.speed)} MPH{" "}
-          {getWindDirection(props.weatherData.wind.deg)}
+          Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
+          {getWindDirection(weatherData.wind.deg)}
         </div>
       </div>
     </div>
