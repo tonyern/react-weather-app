@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import WeatherInfo from "./components/WeatherInfo";
 
 const App = () => {
@@ -9,6 +9,11 @@ const App = () => {
 
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -40,6 +45,7 @@ const App = () => {
         <div className="search-box">
           <input
             type="text"
+            ref={inputRef}
             className="search-bar"
             placeholder="Search City"
             onChange={(event) => setQuery(event.target.value)}
