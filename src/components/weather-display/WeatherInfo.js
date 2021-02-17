@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./weather-info.css";
 
 const WeatherInfo = ({ weatherData }) => {
   const [degree, setDegree] = useState("C");
@@ -126,9 +127,11 @@ const WeatherInfo = ({ weatherData }) => {
           )}
         </div>
 
-        <div className="weather">{weatherData.weather[0].main}</div>
-        <div className="weather">Humidity: {weatherData.main.humidity}%</div>
-        <div className="weather">
+        <div className="weather-detail">{weatherData.weather[0].main}</div>
+        <div className="weather-detail">
+          Humidity: {weatherData.main.humidity}%
+        </div>
+        <div className="weather-detail">
           Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
           {getWindDirection(weatherData.wind.deg)}
         </div>

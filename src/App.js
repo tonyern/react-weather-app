@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import WeatherInfo from "./components/WeatherInfo";
+import WeatherInfo from "./components/weather-display/WeatherInfo";
 
 const App = () => {
   const openWeatherMapAPI = {

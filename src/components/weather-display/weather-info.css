@@ -1,0 +1,122 @@
+/* Background for the weather info component. */
+.App {
+  background-image: url("./assets/clear.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Clouds {
+  background-image: url("./assets/cloudy.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Haze {
+  background-image: url("./assets/haze.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Mist {
+  background-image: url("./assets/mist.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Rain {
+  background-image: url("./assets/rain.png");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Smoke {
+  background-image: url("./assets/smoke.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Snow {
+  background-image: url("./assets/snow.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Thunderstorm {
+  background-image: url("./assets/thunderstorm.png");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+/* Location and box display for weather info. */
+.location-box .location {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+/* Display for weather info such as temperature and weather type. */
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temperature {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+
+  color: #fff;
+  font-size: 102px;
+  font-weight: 900;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-box .detail-temperature {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+}
+
+.weather-box .degree-btn {
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  background: none;
+  border: none;
+
+  color: #fff;
+  font-size: 52px;
+  font-weight: 800;
+}
+
+.weather-box .weather-detail {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
