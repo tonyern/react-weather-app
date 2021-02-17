@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./index.css";
+import "./search-bar.css";
 import WeatherInfo from "./components/weather-display/WeatherInfo";
 
 const App = () => {
