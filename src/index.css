@@ -1,157 +1,164 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'montseratt', sans-serif;
+  font-family: "montseratt", sans-serif;
 }
 
 main {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .App {
-    background-image: url('./assets/clear.jpg');
-    background-size: cover;
-    background-position: bottom;
-    transition: 0.4 ease-out;
+  background-image: url("./assets/clear.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
 }
 
 .App.Clouds {
-    background-image: url('./assets/cloudy.jpeg');
-    background-size: cover;
-    background-position: bottom;
-    transition: 0.4 ease-out;
+  background-image: url("./assets/cloudy.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
 }
 
 .App.Rain {
-    background-image: url('./assets/rain.png');
-    background-size: cover;
-    background-position: bottom;
-    transition: 0.4 ease-out;
+  background-image: url("./assets/rain.png");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
 }
 
 .App.Mist {
-    background-image: url('./assets/mist.jpeg');
-    background-size: cover;
-    background-position: bottom;
-    transition: 0.4 ease-out;
+  background-image: url("./assets/mist.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
 }
 
 .App.Thunderstorm {
-    background-image: url('./assets/thunderstorm.png');
-    background-size: cover;
-    background-position: bottom;
-    transition: 0.4 ease-out;
+  background-image: url("./assets/thunderstorm.png");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
 }
 
 .App.Haze {
-    background-image: url('./assets/haze.jpeg');
-    background-size: cover;
-    background-position: bottom;
-    transition: 0.4 ease-out;
+  background-image: url("./assets/haze.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Smoke {
+  background-image: url("./assets/smoke.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
 }
 
 .App.Snow {
-    background-image: url('./assets/snow.jpeg');
-    background-size: cover;
-    background-position: bottom;
-    transition: 0.4 ease-out;
+  background-image: url("./assets/snow.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
 }
 
 .search-box {
-    width: 100%;
-    margin: 0px;
-    margin-bottom: 100px;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 100px;
 }
 
 .search-box .search-bar {
-    display: block;
-    width: 100%;
-    padding: 15px;
+  display: block;
+  width: 100%;
+  padding: 15px;
 
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
 
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 0px 0px 16px 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 16px 16px;
 
-    box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 
-    color: #313131;
-    font-size: 20px;
+  color: #313131;
+  font-size: 20px;
 
-    transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .search-box .search-bar:focus {
-    background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .location-box .location {
-    color: #FFF;
-    font-size: 32px;
-    font-weight: 500;
-    text-align: center;
-    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
 .location-box .date {
-    color: #FFF;
-    font-size: 20px;
-    font-weight: 300;
-    font-style: italic;
-    text-align: center;
-    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
 .weather-box {
-    text-align: center;
+  text-align: center;
 }
 
 .weather-box .temperature {
-    position: relative;
-    display: inline-block;
-    margin: 30px auto;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 15px 25px;
-    
-    color: #FFF;
-    font-size: 102px;
-    font-weight: 900;
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
 
-    text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
-    text-align: center;
-    box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 102px;
+  font-weight: 900;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .weather-box .detail-temperature {
-    color: #FFF;
-    font-size: 32px;
-    font-weight: 800;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
 
-    text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
-    text-align: center;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
 }
 
 .weather-box .degree-btn {
-    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-    background: none;
-    border: none;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  background: none;
+  border: none;
 
-    color: #FFF;
-    font-size: 52px;
-    font-weight: 800;
+  color: #fff;
+  font-size: 52px;
+  font-weight: 800;
 }
 
 .weather-box .weather {
-    color: #FFF;
-    font-size: 48px;
-    font-weight: 700;
-    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
