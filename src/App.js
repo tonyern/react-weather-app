@@ -24,9 +24,14 @@ const App = () => {
       )
         .then((res) => res.json())
         .then((result) => {
-          setWeather(result);
           setQuery("");
-          console.log(result);
+
+          if (result.name) {
+            setWeather(result);
+            console.log(result);
+          } else {
+            console.log("City not found");
+          }
         });
     }
   };
