@@ -30,30 +30,19 @@ const App = () => {
           console.log(response.data);
         })
         .catch((error) => {
-          console.log(
-            "City not found. Could be that API doesn't have city data or invalid input"
-          );
           setQuery("");
-        });
 
-      /*fetch(
-        `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
-      )
-        .then((response) => {
-          if (!response.ok) {
-            throw Error(response.statusText);
+          if (error.response) {
+            // Error if city name was not found or invalid input.
+            console.log(error.response.data);
+          } else if (error.request) {
+            // Error if no response was received.
+            console.log(error.request);
+          } else {
+            // Other errors.
+            console.log(error.message);
           }
-
-          return response.json();
-        })
-        .then((result) => {
-          setQuery("");
-          setWeather(result);
-          console.log(result);
-        })
-        .catch((err) => {
-          console.log("City not found. Cannot retrieve data from API");
-        });*/
+        });
     }
   };
 
