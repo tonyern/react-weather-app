@@ -22,16 +22,20 @@ const App = () => {
       fetch(
         `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
       )
-        .then((res) => res.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+
+          return response.json();
+        })
         .then((result) => {
           setQuery("");
-
-          if (result.name) {
-            setWeather(result);
-            console.log(result);
-          } else {
-            console.log("City not found");
-          }
+          setWeather(result);
+          console.log(result);
+        })
+        .catch((err) => {
+          console.log("City not found. Cannot retrieve data from API");
         });
     }
   };
