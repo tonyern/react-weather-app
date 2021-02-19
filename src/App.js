@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import axios from "axios";
 import "./index.css";
 import "./search-bar.css";
 import WeatherInfo from "./components/weather-display/WeatherInfo";
@@ -19,7 +20,23 @@ const App = () => {
 
   const search = (evt) => {
     if (evt.key === "Enter") {
-      fetch(
+      axios
+        .get(
+          `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
+        )
+        .then((response) => {
+          setQuery("");
+          setWeather(response.data);
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(
+            "City not found. Could be that API doesn't have city data or invalid input"
+          );
+          setQuery("");
+        });
+
+      /*fetch(
         `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
       )
         .then((response) => {
@@ -36,7 +53,7 @@ const App = () => {
         })
         .catch((err) => {
           console.log("City not found. Cannot retrieve data from API");
-        });
+        });*/
     }
   };
 
