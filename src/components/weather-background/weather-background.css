@@ -54,3 +54,18 @@
   background-position: bottom;
   transition: 0.4 ease-out;
 }
+
+/* Main styling for whole application. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "montseratt", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+}
