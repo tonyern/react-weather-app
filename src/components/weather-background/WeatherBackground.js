@@ -20,8 +20,10 @@ const WeatherBackground = () => {
 
   return (
     <div className={changeBackground()}>
-      <SearchBar searchProps={setWeather} />
-      <WeatherInfo weatherData={weather} />
+      <main>
+        <SearchBar searchProps={setWeather} />
+        <WeatherInfo weatherData={weather} />
+      </main>
     </div>
   );
 };
