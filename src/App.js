@@ -20,12 +20,7 @@ const App = () => {
     <div className={changeBackground()}>
       <main>
         <SearchBar searchProps={setWeather} />
-
-        {typeof weather.main != "undefined" ? (
-          <WeatherInfo weatherData={weather} />
-        ) : (
-          ""
-        )}
+        <WeatherInfo weatherData={weather} />
       </main>
     </div>
   );

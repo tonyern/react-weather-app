@@ -88,54 +88,64 @@ const WeatherInfo = ({ weatherData }) => {
 
   return (
     <div>
-      <div className="location-box">
-        <div className="location">
-          {weatherData.name}, {weatherData.sys.country}
-        </div>
-        <div className="date">{dateBuilder(new Date())}</div>
-      </div>
-
-      <div className="weather-box">
+      {typeof weatherData.main != "undefined" ? (
         <div>
-          {degree === "C" ? (
-            <div className="temperature">
-              {roundCelsius(weatherData.main.temp)}
+          <div className="location-box">
+            <div className="location">
+              {weatherData.name}, {weatherData.sys.country}
             </div>
-          ) : (
-            <div className="temperature">
-              {roundFahrenheit(weatherData.main.temp)}
-            </div>
-          )}
-          <button className="temperature degree-btn" onClick={toggleDegrees}>
-            °{degree}
-          </button>
-        </div>
-        <div>
-          {degree === "C" ? (
-            <div className="detail-temperature">
-              Feels Like: {roundCelsius(weatherData.main.feels_like)}°{degree} |
-              Low: {roundCelsius(weatherData.main.temp_min)}°{degree} | High:{" "}
-              {roundCelsius(weatherData.main.temp_max)}°{degree}
-            </div>
-          ) : (
-            <div className="detail-temperature">
-              Feels Like: {roundFahrenheit(weatherData.main.feels_like)}°
-              {degree} | Low: {roundFahrenheit(weatherData.main.temp_min)}°
-              {degree} | High: {roundFahrenheit(weatherData.main.temp_max)}°
-              {degree}
-            </div>
-          )}
-        </div>
+            <div className="date">{dateBuilder(new Date())}</div>
+          </div>
 
-        <div className="weather-detail">{weatherData.weather[0].main}</div>
-        <div className="weather-detail">
-          Humidity: {weatherData.main.humidity}%
+          <div className="weather-box">
+            <div>
+              {degree === "C" ? (
+                <div className="temperature">
+                  {roundCelsius(weatherData.main.temp)}
+                </div>
+              ) : (
+                <div className="temperature">
+                  {roundFahrenheit(weatherData.main.temp)}
+                </div>
+              )}
+              <button
+                className="temperature degree-btn"
+                onClick={toggleDegrees}
+              >
+                °{degree}
+              </button>
+            </div>
+            <div>
+              {degree === "C" ? (
+                <div className="detail-temperature">
+                  Feels Like: {roundCelsius(weatherData.main.feels_like)}°
+                  {degree} | Low: {roundCelsius(weatherData.main.temp_min)}°
+                  {degree} | High: {roundCelsius(weatherData.main.temp_max)}°
+                  {degree}
+                </div>
+              ) : (
+                <div className="detail-temperature">
+                  Feels Like: {roundFahrenheit(weatherData.main.feels_like)}°
+                  {degree} | Low: {roundFahrenheit(weatherData.main.temp_min)}°
+                  {degree} | High: {roundFahrenheit(weatherData.main.temp_max)}°
+                  {degree}
+                </div>
+              )}
+            </div>
+
+            <div className="weather-detail">{weatherData.weather[0].main}</div>
+            <div className="weather-detail">
+              Humidity: {weatherData.main.humidity}%
+            </div>
+            <div className="weather-detail">
+              Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
+              {getWindDirection(weatherData.wind.deg)}
+            </div>
+          </div>
         </div>
-        <div className="weather-detail">
-          Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
-          {getWindDirection(weatherData.wind.deg)}
-        </div>
-      </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
