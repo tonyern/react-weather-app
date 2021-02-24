@@ -13,8 +13,6 @@ const WeatherBackground = () => {
       background = background.concat(weather.weather[0].main);
     }
 
-    console.log(background);
-
     return background;
   };
 
