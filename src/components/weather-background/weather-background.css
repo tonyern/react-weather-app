@@ -1,0 +1,56 @@
+/* Background for the weather info component. */
+.App {
+  background-image: url("./assets/clear.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Clouds {
+  background-image: url("./assets/cloudy.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Haze {
+  background-image: url("./assets/haze.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Mist {
+  background-image: url("./assets/mist.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Rain {
+  background-image: url("./assets/rain.png");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Smoke {
+  background-image: url("./assets/smoke.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Snow {
+  background-image: url("./assets/snow.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.Thunderstorm {
+  background-image: url("./assets/thunderstorm.png");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
