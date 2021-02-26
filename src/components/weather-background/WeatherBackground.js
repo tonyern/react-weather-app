@@ -17,7 +17,7 @@ const WeatherBackground = () => {
   };
 
   return (
-    <div className={changeBackground()}>
+    <div className={changeBackground()} data-testid="weather-background">
       <main>
         <SearchBar searchProps={setWeather} />
         <WeatherInfo weatherData={weather} />
