@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search bar snapshot test 1`] = `
+<div
+  className="search-box"
+>
+  <input
+    className="search-bar"
+    data-testid="search-input-test"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="Search City"
+    type="text"
+    value=""
+  />
+</div>
+`;
