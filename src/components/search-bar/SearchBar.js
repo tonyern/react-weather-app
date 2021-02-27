@@ -49,6 +49,7 @@ const SearchBar = ({ searchProps }) => {
         type="text"
         ref={inputRef}
         className="search-bar"
+        data-testid="search-input-test"
         placeholder="Search City"
         onChange={(event) => setQuery(event.target.value)}
         value={query}
