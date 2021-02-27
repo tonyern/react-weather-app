@@ -87,7 +87,7 @@ const WeatherInfo = ({ weatherData }) => {
   };
 
   return (
-    <div>
+    <div data-testid="weather-info-test">
       {typeof weatherData.main != "undefined" ? (
         <div>
           <div className="location-box">

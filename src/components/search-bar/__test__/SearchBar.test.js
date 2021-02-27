@@ -38,12 +38,33 @@ describe("Input value", () => {
   });
 });
 
-/*it("Making sure query hook exist with no problem", () => {
-  const { result } = renderHook(() => SearchBar());
-  expect(result.current.query).toBe("");
-});*/
+describe("Search functionality", () => {
+  describe("Empty query", () => {
+    it("Trigger search function but no data from API", () => {
+      const search = jest.fn();
 
-/*it("Search bar snapshot", () => {
-  const tree = renderer.create(<SearchBar />).toJSON();
-  expect(tree).toMatchSnapshot();
-});*/
+      const { queryByTestId, queryByPlaceholderText } = render(
+        <SearchBar search={search} />
+      );
+
+      fireEvent.submit(queryByTestId("search-input-test"));
+      expect(search).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("Non-empty query", () => {
+    it("Trigger search function but data from API", () => {
+      const search = jest.fn();
+
+      const { queryByTestId, queryByPlaceholderText } = render(
+        <SearchBar search={search} />
+      );
+
+      const searchInput = queryByPlaceholderText("Search City");
+      fireEvent.change(searchInput, { target: { value: "dallas" } });
+
+      fireEvent.submit(queryByTestId("search-input-test"));
+      expect(search).not.toHaveBeenCalled();
+    });
+  });
+});
