@@ -12,7 +12,9 @@ const SearchBar = ({ searchProps }) => {
   const inputRef = useRef();
 
   useEffect(() => {
-    inputRef.current.focus();
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   });
 
   const search = (evt) => {

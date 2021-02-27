@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { render, fireEvent } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import { renderHook } from "@testing-library/react-hooks";
 import "@testing-library/jest-dom/extend-expect";
 import SearchBar from "../SearchBar";
@@ -24,6 +25,12 @@ it("Renders correctly", () => {
   const { queryByTestId, queryByPlaceholderText } = render(<SearchBar />);
   expect(queryByTestId("search-input-test")).toBeTruthy();
   expect(queryByPlaceholderText("Search City")).toBeTruthy();
+});
+
+it("Search bar snapshot test", () => {
+  const inputRef = jest.fn();
+  const tree = renderer.create(<SearchBar inputRef={inputRef} />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 describe("Input value", () => {
