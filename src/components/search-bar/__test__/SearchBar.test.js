@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { render, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import { renderHook } from "@testing-library/react-hooks";
 import "@testing-library/jest-dom/extend-expect";
 import SearchBar from "../SearchBar";
 
