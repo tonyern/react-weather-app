@@ -22,7 +22,15 @@ exports[`Weather background snapshot test 1`] = `
     <div
       data-testid="weather-info-test"
     >
-      
+      <div
+        className="weather-box"
+      >
+        <div
+          className="weather-detail"
+        >
+          Please Enter a City to get Weather Info
+        </div>
+      </div>
     </div>
   </main>
 </div>

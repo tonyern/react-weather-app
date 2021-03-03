@@ -34,13 +34,21 @@ it("Search bar snapshot test", () => {
 
 describe("Input value", () => {
   it("Updates on change", () => {
-    const { queryByPlaceholderText } = render(<SearchBar />);
+    const search = jest.fn();
+    const { queryByPlaceholderText, getByTestId } = render(
+      <SearchBar search={search} />
+    );
 
     const searchInput = queryByPlaceholderText("Search City");
 
     fireEvent.change(searchInput, { target: { value: "dallas" } });
-
     expect(searchInput.value).toBe("dallas");
+
+    fireEvent.keyPress(getByTestId("search-input-test"), {
+      key: "Enter",
+      code: "Enter",
+    });
+    //expect(search).toHaveBeenCalled();
   });
 });
 

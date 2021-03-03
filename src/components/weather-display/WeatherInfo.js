@@ -144,7 +144,11 @@ const WeatherInfo = ({ weatherData }) => {
           </div>
         </div>
       ) : (
-        ""
+        <div className="weather-box">
+          <div className="weather-detail">
+            Please Enter a City to get Weather Info
+          </div>
+        </div>
       )}
     </div>
   );
