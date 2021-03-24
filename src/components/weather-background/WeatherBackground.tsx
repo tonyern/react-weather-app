@@ -3,17 +3,17 @@ import "./weather-background.css";
 import SearchBar from "../search-bar/SearchBar";
 import WeatherInfo from "../weather-display/WeatherInfo";
 
-const WeatherBackground = () => {
+const WeatherBackground = (): JSX.Element => {
   const [weather, setWeather] = useState({});
 
-  const changeBackground = () => {
-    let background = "App ";
-
+  const changeBackground = (): string => {
+    // @ts-ignore
     if (typeof weather.main != "undefined") {
-      background = background.concat(weather.weather[0].main);
+      // @ts-ignore
+      return "App ".concat(weather.weather[0].main);
+    } else {
+      return "App";
     }
-
-    return background;
   };
 
   return (

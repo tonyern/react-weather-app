@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./weather-info.css";
 
-const WeatherInfo = ({ weatherData }) => {
+const WeatherInfo = ({ weatherData }): JSX.Element => {
   const [degree, setDegree] = useState("C");
 
-  const dateBuilder = (d) => {
-    let months = [
+  const dateBuilder = (d: Date): string => {
+    let months: string[] = [
       "January",
       "February",
       "March",
@@ -19,7 +19,7 @@ const WeatherInfo = ({ weatherData }) => {
       "November",
       "December",
     ];
-    let days = [
+    let days: string[] = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -29,16 +29,11 @@ const WeatherInfo = ({ weatherData }) => {
       "Saturday",
     ];
 
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day}, ${date} ${month} ${year}`;
+    return `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
   };
 
   // Change temperature display to celsius or fahranheit.
-  const toggleDegrees = () => {
+  const toggleDegrees = (): void => {
     if (degree === "C") {
       setDegree("F");
     } else {
@@ -47,17 +42,17 @@ const WeatherInfo = ({ weatherData }) => {
   };
 
   // Converting celsius to fahrenheit and then rounding.
-  const roundFahrenheit = (celsius) => {
+  const roundFahrenheit = (celsius: number): number => {
     return Math.round((9 / 5) * celsius + 32);
   };
 
   // Rounding celsius.
-  const roundCelsius = (celsius) => {
+  const roundCelsius = (celsius: number): number => {
     return Math.round(celsius);
   };
 
   // Take wind from API and convert it to MPH.
-  const convertWindMPH = (windSpeed) => {
+  const convertWindMPH = (windSpeed: number): number => {
     return Math.round(windSpeed * 2.236936);
   };
 
@@ -65,7 +60,7 @@ const WeatherInfo = ({ weatherData }) => {
     Code from link below:
     https://community.openhab.org/t/convert-wind-direction-degrees-to-compass-points/71677/3.
   */
-  const getWindDirection = (windDirection) => {
+  const getWindDirection = (windDirection: number): string => {
     let j = (windDirection + 11.25) % 360;
 
     if (j <= 22.5) return "N";
