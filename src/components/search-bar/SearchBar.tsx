@@ -17,8 +17,8 @@ const SearchBar = ({ searchProps }): JSX.Element => {
     }
   });
 
-  const search = (evt: React.KeyboardEvent<HTMLDivElement>): void => {
-    if (evt.key === "Enter") {
+  const search = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+    if (event.key === "Enter") {
       axios
         .get(
           `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
@@ -55,7 +55,7 @@ const SearchBar = ({ searchProps }): JSX.Element => {
         placeholder="Search City"
         onChange={(event) => setQuery(event.target.value)}
         value={query}
-        onKeyPress={(evt: React.KeyboardEvent<HTMLDivElement>) => search(evt)}
+        onKeyPress={(event: React.KeyboardEvent<HTMLDivElement>) => search(event)}
       />
     </div>
   );
