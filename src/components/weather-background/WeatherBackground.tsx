@@ -6,7 +6,7 @@ import WeatherInfo from "../weather-display/WeatherInfo";
 const WeatherBackground = () => {
   const [weather, setWeather] = useState({});
 
-  const changeBackground = () => {
+  const changeBackground = (): string => {
     let background = "App ";
 
     if (typeof weather.main != "undefined") {

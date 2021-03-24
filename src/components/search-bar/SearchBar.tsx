@@ -9,7 +9,7 @@ const SearchBar = ({ searchProps }) => {
   };
 
   const [query, setQuery] = useState("");
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -17,7 +17,7 @@ const SearchBar = ({ searchProps }) => {
     }
   });
 
-  const search = (evt) => {
+  const search = (evt: KeyboardEvent): void => {
     if (evt.key === "Enter") {
       axios
         .get(
