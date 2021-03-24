@@ -7,15 +7,13 @@ const WeatherBackground = (): JSX.Element => {
   const [weather, setWeather] = useState({});
 
   const changeBackground = (): string => {
-    let background = "App ";
-
     // @ts-ignore
     if (typeof weather.main != "undefined") {
       // @ts-ignore
-      background = background.concat(weather.weather[0].main);
+      return "App ".concat(weather.weather[0].main);
+    } else {
+      return "App";
     }
-
-    return background;
   };
 
   return (
