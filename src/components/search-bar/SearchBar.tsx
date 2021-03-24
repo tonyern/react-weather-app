@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import "./search-bar.css";
 
-const SearchBar = ({ searchProps }) => {
+const SearchBar = ({ searchProps }): JSX.Element => {
   const openWeatherMapAPI = {
     key: "8713314e929a6ae57041a78e979b402d",
     base: "http://api.openweathermap.org/data/2.5/",
@@ -17,13 +17,13 @@ const SearchBar = ({ searchProps }) => {
     }
   });
 
-  const search = (evt: KeyboardEvent): void => {
+  const search = (evt: React.KeyboardEvent<HTMLDivElement>): void => {
     if (evt.key === "Enter") {
       axios
         .get(
           `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
         )
-        .then((response) => {
+        .then((response: AxiosResponse<any>) => {
           setQuery("");
           searchProps(response.data);
           console.log(response.data);
@@ -55,7 +55,7 @@ const SearchBar = ({ searchProps }) => {
         placeholder="Search City"
         onChange={(event) => setQuery(event.target.value)}
         value={query}
-        onKeyPress={search}
+        onKeyPress={(evt: React.KeyboardEvent<HTMLDivElement>) => search(evt)}
       />
     </div>
   );

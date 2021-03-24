@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./weather-info.css";
 
-const WeatherInfo = () => {
+const WeatherInfo = ({ weatherData }): JSX.Element => {
   const [degree, setDegree] = useState("C");
 
   const dateBuilder = (d: Date): string => {
-    let months = [
+    let months: string[] = [
       "January",
       "February",
       "March",
@@ -19,7 +19,7 @@ const WeatherInfo = () => {
       "November",
       "December",
     ];
-    let days = [
+    let days: string[] = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -29,12 +29,7 @@ const WeatherInfo = () => {
       "Saturday",
     ];
 
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day}, ${date} ${month} ${year}`;
+    return `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
   };
 
   // Change temperature display to celsius or fahranheit.

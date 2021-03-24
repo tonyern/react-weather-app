@@ -3,15 +3,15 @@ import "./weather-background.css";
 import SearchBar from "../search-bar/SearchBar";
 import WeatherInfo from "../weather-display/WeatherInfo";
 
-const WeatherBackground = () => {
+const WeatherBackground = (): JSX.Element => {
   const [weather, setWeather] = useState({});
 
   const changeBackground = (): string => {
     let background = "App ";
 
-    if (typeof weather.main != "undefined") {
+    /*if (typeof weather.main != "undefined") {
       background = background.concat(weather.weather[0].main);
-    }
+    }*/
 
     return background;
   };
