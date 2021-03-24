@@ -9,9 +9,11 @@ const WeatherBackground = (): JSX.Element => {
   const changeBackground = (): string => {
     let background = "App ";
 
-    /*if (typeof weather.main != "undefined") {
+    // @ts-ignore
+    if (typeof weather.main != "undefined") {
+      // @ts-ignore
       background = background.concat(weather.weather[0].main);
-    }*/
+    }
 
     return background;
   };

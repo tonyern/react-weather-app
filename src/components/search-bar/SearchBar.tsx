@@ -28,7 +28,7 @@ const SearchBar = ({ searchProps }): JSX.Element => {
           searchProps(response.data);
           console.log(response.data);
         })
-        .catch((error) => {
+        .catch((error: any) => {
           setQuery("");
 
           if (error.response) {
