@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./weather-info.css";
 
+// @ts-ignore
 const WeatherInfo = ({ weatherData }): JSX.Element => {
   const [degree, setDegree] = useState("C");
 
