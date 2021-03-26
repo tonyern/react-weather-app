@@ -11,9 +11,9 @@ const WeatherBackground = (): JSX.Element => {
     if (typeof weather.main != "undefined") {
       // @ts-ignore
       return "App ".concat(weather.weather[0].main);
-    } else {
-      return "App";
     }
+    
+    return "App";
   };
 
   return (

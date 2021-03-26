@@ -25,24 +25,21 @@ const SearchBar = ({ searchProps }): JSX.Element => {
           `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
         )
         .then((response: AxiosResponse<any>) => {
-          setQuery("");
           searchProps(response.data);
           console.log(response.data);
         })
         .catch((error: any) => {
-          setQuery("");
+          // Error if city name was not found or invalid input.
+          if (error.response) console.log(error.response.data);
+          
+          // Error if no response was received.
+          if (error.request) console.log(error.request);
 
-          if (error.response) {
-            // Error if city name was not found or invalid input.
-            console.log(error.response.data);
-          } else if (error.request) {
-            // Error if no response was received.
-            console.log(error.request);
-          } else {
-            // Other errors.
-            console.log(error.message);
-          }
+          // Other errors.
+          console.log(error.message);
         });
+
+      setQuery("");
     }
   };
 

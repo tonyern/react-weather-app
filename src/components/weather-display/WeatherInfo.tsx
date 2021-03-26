@@ -35,11 +35,8 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
 
   // Change temperature display to celsius or fahranheit.
   const toggleDegrees = (): void => {
-    if (degree === "C") {
-      setDegree("F");
-    } else {
-      setDegree("C");
-    }
+    if (degree === "C") setDegree("F");
+    if (degree === "F") setDegree("C");
   };
 
   // Converting celsius to fahrenheit and then rounding.
