@@ -15,15 +15,3 @@ it("Weather background snapshot test", () => {
   const tree = renderer.create(<WeatherBackground />).toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-it("Testing calls to changeBackground function", () => {
-  const div = document.createElement("div");
-  const result = ReactDOM.render(<WeatherBackground />, div);
-
-  const changeBackground = jest.fn();
-});
-
-it("Making sure weather hook exist with no problem", () => {
-  const { result } = renderHook(() => WeatherBackground());
-  expect(result.current.weather).toBe();
-});

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather background snapshot test 1`] = `
+<div
+  className="App"
+  data-testid="weather-background-test"
+>
+  <main>
+    <div
+      className="search-box"
+    >
+      <input
+        className="search-bar"
+        data-testid="search-input-test"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Search City"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      data-testid="weather-info-test"
+    >
+      <div
+        className="weather-box"
+      >
+        <div
+          className="weather-detail"
+        >
+          Please Enter a City to get Weather Info
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;
