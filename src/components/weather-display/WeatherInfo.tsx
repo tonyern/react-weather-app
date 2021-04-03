@@ -1,5 +1,10 @@
+import { AxiosResponse } from "axios";
 import React, { useState } from "react";
 import "./weather-info.css";
+
+interface WeatherInfoInterface {
+  weatherData: AxiosResponse<any>;
+}
 
 // @ts-ignore
 const WeatherInfo = ({ weatherData }): JSX.Element => {
