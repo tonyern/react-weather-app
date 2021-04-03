@@ -2,8 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import "./search-bar.css";
 
-// @ts-ignore
-const SearchBar = ({ searchProps }): JSX.Element => {
+interface SearchBarInterface {
+  searchProps: React.Dispatch<React.SetStateAction<{}>>;
+};
+
+const SearchBar = ({ searchProps }: SearchBarInterface): JSX.Element => {
   const openWeatherMapAPI = {
     key: "8713314e929a6ae57041a78e979b402d",
     base: "http://api.openweathermap.org/data/2.5/",
