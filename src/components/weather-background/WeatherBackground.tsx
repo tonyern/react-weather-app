@@ -5,21 +5,13 @@ import WeatherInfo from "../weather-display/WeatherInfo";
 
 const WeatherBackground = (): JSX.Element => {
   const [weather, setWeather] = useState({});
-
-  const changeBackground = (): string => {
-    // @ts-ignore
-    if (typeof weather.main != "undefined") {
-      // @ts-ignore
-      return "App ".concat(weather.weather[0].main);
-    }
-    
-    return "App";
-  };
+  // Inital default background class App.
+  const [background, setBackground] = useState("App");
 
   return (
-    <div className={changeBackground()} data-testid="weather-background-test">
+    <div className={background} data-testid="weather-background-test">
       <main>
-        <SearchBar searchProps={setWeather} />
+        <SearchBar searchProps={setWeather} getBackground={setBackground} />
         <WeatherInfo weatherData={weather} />
       </main>
     </div>
