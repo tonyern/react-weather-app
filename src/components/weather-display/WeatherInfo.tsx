@@ -126,11 +126,11 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
               )}
             </div>
 
-            <div className="weather-detail">{weatherData.weather[0].main}</div>
             <div className="weather-detail">
+              {weatherData.weather[0].main}
+              <br></br>
               Humidity: {weatherData.main.humidity}%
-            </div>
-            <div className="weather-detail">
+              <br></br>
               Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
               {getWindDirection(weatherData.wind.deg)}
             </div>
