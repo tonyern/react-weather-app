@@ -54,6 +54,10 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
     return Math.round(windSpeed * 2.236936);
   };
 
+  const convertMetersToMiles = (meters: number) : number => {
+    return Math.round(meters * 0.0006213712);
+  }
+
   /*
     Code from link below:
     https://community.openhab.org/t/convert-wind-direction-degrees-to-compass-points/71677/3.
@@ -131,7 +135,7 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
               <br></br>
               Humidity: {weatherData.main.humidity}%
               <br></br>
-              Visibility: {weatherData.visibility}
+              Visibility: {convertMetersToMiles(weatherData.visibility)} Miles
               <br></br>
               Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
               {getWindDirection(weatherData.wind.deg)}
