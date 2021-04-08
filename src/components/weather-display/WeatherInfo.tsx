@@ -108,16 +108,16 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
                 °{degree}
               </button>
             </div>
-            <div>
+            <div className="detail-temperature">
               {degree === "C" ? (
-                <div className="detail-temperature">
+                <div>
                   Feels Like: {roundCelsius(weatherData.main.feels_like)}°
                   {degree} | Low: {roundCelsius(weatherData.main.temp_min)}°
                   {degree} | High: {roundCelsius(weatherData.main.temp_max)}°
                   {degree}
                 </div>
               ) : (
-                <div className="detail-temperature">
+                <div>
                   Feels Like: {roundFahrenheit(weatherData.main.feels_like)}°
                   {degree} | Low: {roundFahrenheit(weatherData.main.temp_min)}°
                   {degree} | High: {roundFahrenheit(weatherData.main.temp_max)}°
@@ -130,6 +130,8 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
               {weatherData.weather[0].main}
               <br></br>
               Humidity: {weatherData.main.humidity}%
+              <br></br>
+              Visibility: {weatherData.visibility}
               <br></br>
               Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
               {getWindDirection(weatherData.wind.deg)}
