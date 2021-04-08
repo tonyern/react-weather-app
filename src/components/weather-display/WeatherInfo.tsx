@@ -59,6 +59,10 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
     return Math.round(windSpeed * 2.236936);
   };
 
+  const convertMetersToMiles = (meters: number) : number => {
+    return Math.round(meters * 0.0006213712);
+  }
+
   /*
     Code from link below:
     https://community.openhab.org/t/convert-wind-direction-degrees-to-compass-points/71677/3.
@@ -113,16 +117,16 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
                 °{degree}
               </button>
             </div>
-            <div>
+            <div className="detail-temperature">
               {degree === "C" ? (
-                <div className="detail-temperature">
+                <div>
                   Feels Like: {roundCelsius(weatherData.main.feels_like)}°
                   {degree} | Low: {roundCelsius(weatherData.main.temp_min)}°
                   {degree} | High: {roundCelsius(weatherData.main.temp_max)}°
                   {degree}
                 </div>
               ) : (
-                <div className="detail-temperature">
+                <div>
                   Feels Like: {roundFahrenheit(weatherData.main.feels_like)}°
                   {degree} | Low: {roundFahrenheit(weatherData.main.temp_min)}°
                   {degree} | High: {roundFahrenheit(weatherData.main.temp_max)}°
@@ -131,11 +135,13 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
               )}
             </div>
 
-            <div className="weather-detail">{weatherData.weather[0].main}</div>
             <div className="weather-detail">
+              {weatherData.weather[0].main}
+              <br></br>
               Humidity: {weatherData.main.humidity}%
-            </div>
-            <div className="weather-detail">
+              <br></br>
+              Visibility: {convertMetersToMiles(weatherData.visibility)} Miles
+              <br></br>
               Wind: {convertWindMPH(weatherData.wind.speed)} MPH{" "}
               {getWindDirection(weatherData.wind.deg)}
             </div>
