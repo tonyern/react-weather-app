@@ -86,7 +86,7 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
   return (
     <div data-testid="weather-info-test">
       {typeof weatherData.main != "undefined" ? (
-        <div>
+        <>
           <div className="location-box">
             <div className="location">
               {weatherData.name}, {weatherData.sys.country}
@@ -141,7 +141,7 @@ const WeatherInfo = ({ weatherData }): JSX.Element => {
               {getWindDirection(weatherData.wind.deg)}
             </div>
           </div>
-        </div>
+        </>
       ) : (
         <div className="weather-box">
           <div className="weather-detail">
