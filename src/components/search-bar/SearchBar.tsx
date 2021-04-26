@@ -10,7 +10,7 @@ interface SearchBarInterface {
 const SearchBar = ({ searchProps, getBackground }: SearchBarInterface): JSX.Element => {
   const openWeatherMapAPI = {
     key: "8713314e929a6ae57041a78e979b402d",
-    base: "http://api.openweathermap.org/data/2.5/",
+    base: "https://api.openweathermap.org/data/2.5/",
   };
 
   const [query, setQuery] = useState("");
