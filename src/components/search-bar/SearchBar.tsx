@@ -8,10 +8,8 @@ interface SearchBarInterface {
 };
 
 const SearchBar = ({ searchProps, getBackground }: SearchBarInterface): JSX.Element => {
-  const openWeatherMapAPI = {
-    key: "8713314e929a6ae57041a78e979b402d",
-    base: "https://api.openweathermap.org/data/2.5/",
-  };
+  const { REACT_APP_OPEN_WEATHER_MAPS_API_ACCESS_KEY } = process.env;
+  const openWeatherMapAPI = "https://api.openweathermap.org/data/2.5/";
 
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -26,7 +24,7 @@ const SearchBar = ({ searchProps, getBackground }: SearchBarInterface): JSX.Elem
     if (event.key === "Enter") {
       axios
         .get(
-          `${openWeatherMapAPI.base}weather?q=${query}&units=metric&APPID=${openWeatherMapAPI.key}`
+          `${openWeatherMapAPI}weather?q=${query}&units=metric&APPID=${REACT_APP_OPEN_WEATHER_MAPS_API_ACCESS_KEY}`
         )
         .then((response: AxiosResponse<any>) => {
           searchProps(response.data);
