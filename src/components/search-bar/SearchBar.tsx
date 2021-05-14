@@ -21,6 +21,8 @@ const SearchBar = ({ searchProps, getBackground }: SearchBarInterface): JSX.Elem
   });
 
   const search = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+    console.log("T1");
+    console.log(REACT_APP_OPEN_WEATHER_MAPS_API_ACCESS_KEY);
     if (event.key === "Enter") {
       axios
         .get(
