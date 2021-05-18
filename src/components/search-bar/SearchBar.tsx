@@ -24,7 +24,7 @@ const SearchBar = ({ searchProps, getBackground }: SearchBarInterface): JSX.Elem
     if (event.key === "Enter") {
       axios
         .get(
-          `${openWeatherMapAPI}weather?q=${query}&units=metric&APPID=${REACT_APP_OPEN_WEATHER_MAPS_API_ACCESS_KEY}`
+          `${openWeatherMapAPI}weather?q=${query}&units=metric&APPID=8713314e929a6ae57041a78e979b402d`
         )
         .then((response: AxiosResponse<any>) => {
           searchProps(response.data);
